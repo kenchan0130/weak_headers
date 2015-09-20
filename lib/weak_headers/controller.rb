@@ -1,6 +1,6 @@
 module WeakHeaders
   module Controller
-    def validates_header(action_name = nil, &block)
+    def validates_headers(action_name = nil, &block)
       filter_option = {}
       filter_option.merge!(only: action_name) unless action_name.nil?
 

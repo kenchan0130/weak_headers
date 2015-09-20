@@ -22,7 +22,7 @@ end
 
 # WeakHeaders provides `validates_headers` class method to define validations.
 class AuthController < ApplicationController
-  validates_header :create do
+  validates_headers :create do
     requires 'X-App-Client-Id', except: ["token", "123456"]
     optional :'X-App-Id', only: '1'
     requires 'X-App-Client-Secret' do |value|
