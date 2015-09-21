@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/kenchan0130/weak_headers.png)
+
 # WeakHeaders
 Validates `request.headers` in your rails controller.
 
