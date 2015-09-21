@@ -14,13 +14,15 @@ require 'weak_headers/version'
 # Examples
 #
 #   class AuthController < ApplicationController
-#     rescue_from WeakHeaders::ValidationError do |exception|
-#       render text: exception.message, status: 400
+#     rescue_from WeakHeaders::ValidationError do |e|
+#       render text: e.message, status: 400
 #     end
 #
 #     validates_headers :create do
 #       requires 'X-Test-Token'
-#       optional 'X-Test-Id'
+#       optional 'X-Test-Id' do |value|
+#         value =~ /\A\d+\z/
+#       end
 #     end
 #
 #     def create

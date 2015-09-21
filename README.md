@@ -1,13 +1,9 @@
 # WeakHeaders
-Validates `request.headers` in your controller.
-
-## Notice
-I'm sorry, it is not yet written test.
-I'll add test as soon as possible.
+Validates `request.headers` in your rails controller.
 
 ## Installation
 ```ruby
-gem "weak_headers"
+gem 'weak_headers'
 ```
 
 ## Usage
