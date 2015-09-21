@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Tadayuki Onishi']
   spec.email         = ['tt.tanishi100@gmail.com']
   spec.summary       = 'Add a validation headers filter to your controller.'
-  spec.homepage      = 'https://github.com/kenchan0103/weak_headers'
+  spec.homepage      = 'https://github.com/kenchan0130/weak_headers'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
