@@ -1,4 +1,4 @@
-$:.push File.expand_path("../lib", __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
 
 require 'weak_headers/version'
 
@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = WeakHeaders::VERSION
   spec.authors       = ['Tadayuki Onishi']
   spec.email         = ['tt.tanishi100@gmail.com']
-  spec.summary       = 'Add a validation headers filter to your controller.'
+  spec.summary       = 'Add a validation headers filter to your rails controller.'
   spec.homepage      = 'https://github.com/kenchan0130/weak_headers'
   spec.license       = 'MIT'
 
