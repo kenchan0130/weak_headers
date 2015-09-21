@@ -1,3 +1,6 @@
+## 0.0.5
+- Add test
+
 ## 0.0.4
 - Fix typo
 
