@@ -1,8 +1,8 @@
 module WeakHeaders
   module Controller
-    def validates_headers(action_name = nil, &block)
+    def validates_headers(*args, &block)
       filter_options = {}
-      filter_options.merge!(only: action_name) unless action_name.nil?
+      filter_options.merge!(only: args.flatten) unless args.empty?
 
       before_filter filter_options do
         validator = WeakHeaders::Validator.new(self, &block)

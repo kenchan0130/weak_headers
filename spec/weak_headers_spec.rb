@@ -9,6 +9,14 @@ RSpec.describe 'Anything', type: :controller do
       render text: 'dummy'
     end
 
+    def update
+      render text: 'dummy'
+    end
+
+    def destory
+      render text: 'dummy'
+    end
+
     rescue_from WeakHeaders::ValidationError do |e|
       render text: e.message, status: 400
     end
@@ -18,6 +26,10 @@ RSpec.describe 'Anything', type: :controller do
       optional 'X-Test-Id' do |value|
         value =~ /\A\d+\z/
       end
+    end
+
+    validates_headers :update, :destory do
+      requires 'X-Test-Id'
     end
   end
 
@@ -50,6 +62,27 @@ RSpec.describe 'Anything', type: :controller do
       get :index
 
       expect(response).to have_http_status(200)
+    end
+  end
+
+  context 'given array arguments' do
+    before do
+      routes.draw do
+        put 'update' => 'anonymous#update'
+        delete 'destory' => 'anonymous#destory'
+      end
+    end
+
+    it 'should return 400' do
+      put :update
+
+      expect(response).to have_http_status(400)
+    end
+
+    it 'should return 400' do
+      delete :destory
+
+      expect(response).to have_http_status(400)
     end
   end
 end
