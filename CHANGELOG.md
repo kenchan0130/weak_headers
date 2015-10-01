@@ -1,3 +1,6 @@
+## 0.1.0
+- Support variable arguments for the validates_headers method
+
 ## 0.0.5
 - Add test
 
