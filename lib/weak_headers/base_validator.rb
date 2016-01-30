@@ -25,7 +25,7 @@ module WeakHeaders
         false
       when requires? && @block && !@block.call(value)
         false
-      when optional? && present? && @block && !@block.call(value)
+      when optional? && present? && @block && !@controller.instance_exec(value, &@block)
         false
       else
         true

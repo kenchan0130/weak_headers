@@ -24,12 +24,18 @@ RSpec.describe 'Anything', type: :controller do
     validates_headers :index do
       requires 'X-Test-Token'
       optional 'X-Test-Id' do |value|
-        value =~ /\A\d+\z/
+        number?(value)
       end
     end
 
     validates_headers :update, :destory do
       requires 'X-Test-Id'
+    end
+
+    private
+
+    def number?(value)
+      !!(value =~ /\A\d+\z/)
     end
   end
 
