@@ -1,3 +1,6 @@
+## 0.2.0
+- Change execution context of validator block
+
 ## 0.1.0
 - Support variable arguments for the validates_headers method
 
