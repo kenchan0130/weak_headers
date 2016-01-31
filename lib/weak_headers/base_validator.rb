@@ -12,7 +12,7 @@ module WeakHeaders
     end
 
     def type
-      self.class.name.split("::").last.sub(/Validator\z/, '').underscore.to_sym
+      self.class.name.split('::').last.sub(/Validator\z/, '').underscore.to_sym
     end
 
     private
@@ -25,7 +25,7 @@ module WeakHeaders
         false
       when requires? && @block && !@block.call(value)
         false
-      when optional? && present? && @block && !@block.call(value)
+      when optional? && present? && @block && !@controller.instance_exec(value, &@block)
         false
       else
         true
@@ -66,12 +66,12 @@ module WeakHeaders
 
     def exceptional?
       case
-        when @options[:only].try(:exclude?, value)
-          true
-        when @options[:except].try(:include?, value)
-          true
-        else
-          false
+      when @options[:only].try(:exclude?, value)
+        true
+      when @options[:except].try(:include?, value)
+        true
+      else
+        false
       end
     end
 
