@@ -12,7 +12,7 @@ module WeakHeaders
     end
 
     def type
-      self.class.name.split("::").last.sub(/Validator\z/, '').underscore.to_sym
+      self.class.name.split('::').last.sub(/Validator\z/, '').underscore.to_sym
     end
 
     private
@@ -66,12 +66,12 @@ module WeakHeaders
 
     def exceptional?
       case
-        when @options[:only].try(:exclude?, value)
-          true
-        when @options[:except].try(:include?, value)
-          true
-        else
-          false
+      when @options[:only].try(:exclude?, value)
+        true
+      when @options[:except].try(:include?, value)
+        true
+      else
+        false
       end
     end
 
