@@ -1,6 +1,6 @@
 module WeakHeaders
   module Controller
-    def validates_headers(*args, &block)
+    def header_validates(*args, &block)
       filter_options = {}
       filter_options.merge!(only: args.flatten) unless args.empty?
 
