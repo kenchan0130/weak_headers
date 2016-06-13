@@ -9,7 +9,7 @@ require 'weak_headers/validation_error'
 require 'weak_headers/validator'
 require 'weak_headers/version'
 
-# Provides `validates_headers` DSL to controllers to validate request headers.
+# Provides `header_validates` DSL to controllers to validate request headers.
 #
 # Examples
 #
@@ -18,7 +18,7 @@ require 'weak_headers/version'
 #       render text: e.message, status: 400
 #     end
 #
-#     validates_headers :create do
+#     header_validates :create do
 #       requires 'X-Test-Token'
 #       optional 'X-Test-Id' do |value|
 #         value =~ /\A\d+\z/

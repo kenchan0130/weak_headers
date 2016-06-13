@@ -21,14 +21,14 @@ RSpec.describe 'Anything', type: :controller do
       render text: e.message, status: 400
     end
 
-    validates_headers :index do
+    header_validates :index do
       requires 'X-Test-Token'
       optional 'X-Test-Id' do |value|
         number?(value)
       end
     end
 
-    validates_headers :update, :destory do
+    header_validates :update, :destory do
       requires 'X-Test-Id'
     end
 
