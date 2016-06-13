@@ -1,3 +1,6 @@
+## 0.3.1
+- Fix runtime dependencies of rails
+
 ## 0.3.0
 - Breaking change: change api from validates_headers to header_validates
 - Drop Rails 3 support
