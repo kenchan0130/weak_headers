@@ -1,3 +1,7 @@
+## 0.4.0
+- Support rails-api in Rails 5
+- Drop the Ruby version less than 2.2.2
+
 ## 0.3.1
 - Fix runtime dependencies of rails
 
