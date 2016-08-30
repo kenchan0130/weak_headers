@@ -41,6 +41,7 @@ module WeakHeaders
     initializer 'weak_headers' do
       ActiveSupport.on_load :action_controller do
         ActionController::Base.extend WeakHeaders::Controller
+        ActionController::API.extend WeakHeaders::Controller if Object.const_defined?('ActionController::API')
       end
     end
   end
